@@ -1,10 +1,9 @@
 import sanityClient from "./sanity";
-import { getFeaturedRestaurant } from "./api";
 
 let sanityQuery = (query, params) => sanityClient.fetch(query, params);
 
-export const getFeaturedRestaurant = () => {
-  return sanityClient(`
+export const getFeaturedRestaurants = () => {
+  return sanityQuery(`
     *[_type=='featured']{
         ...,
         restaurants[] -> {
@@ -18,13 +17,13 @@ export const getFeaturedRestaurant = () => {
 };
 
 export const getCategories = () => {
-  return sanityClient(`
+  return sanityQuery(`
     *[_type=='category']
     `);
 };
 
 export const getFeaturedRestaurantById = (id) => {
-  return sanityClient(
+  return sanityQuery(
     `
     *[_type=='featured' && _id == $id]{
         ...,
