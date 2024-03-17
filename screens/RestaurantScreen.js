@@ -2,7 +2,6 @@ import {
   Image,
   ScrollView,
   StatusBar,
-  StyleSheet,
   Text,
   TouchableOpacity,
   View,
@@ -13,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { setRestaurant } from "../store/restaurantSlice";
 import BasketIcon from "./../components/BasketIcon";
 import { urlFor } from "./../sanity";
+import DishRow from "./../components/DishRow";
 import {
   ArrowLeftIcon,
   ChevronRightIcon,
@@ -132,5 +132,3 @@ const RestaurantScreen = () => {
 };
 
 export default RestaurantScreen;
-
-const styles = StyleSheet.create({});
